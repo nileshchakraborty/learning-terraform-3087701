@@ -84,21 +84,6 @@ module "blog_alb" {
 
     }
   ]
-
-
-    ex-instance = {
-      name_prefix      = "blog"
-      protocol         = "HTTP"
-      port             = 80
-      target_type      = "instance"
-      target_id        = aws_instance.blog.id
-    }
-  }
-
-  tags = {
-    Environment = "Development"
-    Project     = "Example"
-  }
 }
 
 resource "aws_security_group" "blog" {
